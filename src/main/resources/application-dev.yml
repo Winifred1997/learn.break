@@ -1,0 +1,69 @@
+spring:
+  application:
+    name: api
+  securuty:
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    database: mysql
+    show-sql: true
+  datasource:
+    druid:
+#    type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://localhost:3306/db_learn?useUnicode=true&characterEncoding=UTF-8&connectTimeout=60000&socketTimeout=60000&autoReconnect=true&autoReconnectForPools=true&failOverReadOnly=false
+      username: root
+      password:
+      continueOnError: true
+      driverClassName: com.mysql.jdbc.Driver
+      initial-size: 5
+      max-active: 10
+      max-idle: 5
+      min-idle: 2
+      sqlScriptEncoding: utf-8
+      test-on-borrow: true
+      validation-query: select 1
+  redis:
+    host: 101.201.155.140
+    password: 123456
+    port: 6379
+    pool:
+      max-active: 8
+      max-idle: 8
+  http:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: 80
+  context-path: /learn
+  jetty:
+#    acceptors: // HTTP链接器用于接收请求的线程数量，默认为-1，Jetty基于处理器核数选择一个值，具体规则是低于16核为1，低于24核为2，低于32核为3，32核以上为4
+#    selectors: // Socket selector的数量，默认为-1，Jetty基于处理器核数选择一个值，具体规则是低于4核为1，低于8核为3，8核以上为4
+    accesslog:
+      enabled: true
+      filename: /log/jetty
+  error:
+    path: /log/spring/error
+logging:
+  file: /log/dev
+  level:
+    org.springframework.security: INFO
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+    org.mybatis: ERROR
+    org.gjt.mm.mysql: WARN
+    io.swagger: ERROR
+    springfox.documentation: ERROR
+    com.hqq.api: DEBUG
+    org.elasticsearch: INFO
+    org.springframework.web.socket: DEBUG
+
+login:
+  hqq:
+    appid: 12345
+    sortkey: 66666
+    callback: "/learn"
+    basicAuthName: basicis5i
+    basicAuthPass: lEUGd4LtF
