@@ -37,7 +37,7 @@ spring:
       max-request-size: 10MB
 
 server:
-  port: 80
+  port: 8888
   context-path: /learn
   jetty:
 #    acceptors: // HTTP链接器用于接收请求的线程数量，默认为-1，Jetty基于处理器核数选择一个值，具体规则是低于16核为1，低于24核为2，低于32核为3，32核以上为4
@@ -48,7 +48,7 @@ server:
   error:
     path: /log/spring/error
 logging:
-  file: /log/dev
+  file: /log/learn/dev
   level:
     org.springframework.security: INFO
     org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
