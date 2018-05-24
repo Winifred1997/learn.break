@@ -6,7 +6,6 @@ import com.learn.api.common.RestResult;
 import com.learn.api.common.RestResultGenerator;
 import com.learn.api.common.Utils.StringUtils;
 import com.learn.api.common.Utils.Utils;
-import com.learn.api.user.entities.TeacherAccount;
 import com.learn.api.user.entities.UserInfo;
 import com.learn.api.user.services.UserInfoService;
 import io.swagger.annotations.Api;
@@ -22,7 +21,7 @@ import java.util.Calendar;
 
 @Api("用户账号API")
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/user/info")
 public class UserInfoController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserInfoController.class);

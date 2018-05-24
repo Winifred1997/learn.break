@@ -35,6 +35,10 @@ public class ArticleContent implements Serializable {
     @Column(columnDefinition = "varchar(256) COMMENT '文章标题'")
     private String title;
 
+    @ApiModelProperty("文章封面")
+    @Column(columnDefinition = "varchar(256) COMMENT '文章封面'")
+    private String pic;
+
     @ApiModelProperty("文章内容")
     @Column(columnDefinition = "text(4096) COMMENT '文章内容'")
     private String content;
@@ -54,6 +58,18 @@ public class ArticleContent implements Serializable {
     @DateTimeFormat(pattern = Constants.DATE_TIME_FORMAT)
     @Column(columnDefinition = "datetime COMMENT '更新时间'")
     private Date updateTime;
+
+    @ApiModelProperty("文章浏览数")
+    @Transient
+    private Long lookNumber;
+
+    @ApiModelProperty("文章点赞数")
+    @Transient
+    private Long likeNumber;
+
+    @ApiModelProperty("文章评论数")
+    @Transient
+    private Long commentNumber;
 
     public Long getId() {
         return id;
@@ -85,6 +101,14 @@ public class ArticleContent implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
     }
 
     public String getContent() {
@@ -119,4 +143,27 @@ public class ArticleContent implements Serializable {
         this.updateTime = updateTime;
     }
 
+    public Long getLookNumber() {
+        return lookNumber;
+    }
+
+    public void setLookNumber(Long lookNumber) {
+        this.lookNumber = lookNumber;
+    }
+
+    public Long getLikeNumber() {
+        return likeNumber;
+    }
+
+    public void setLikeNumber(Long likeNumber) {
+        this.likeNumber = likeNumber;
+    }
+
+    public Long getCommentNumber() {
+        return commentNumber;
+    }
+
+    public void setCommentNumber(Long commentNumber) {
+        this.commentNumber = commentNumber;
+    }
 }

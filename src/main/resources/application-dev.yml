@@ -12,9 +12,9 @@ spring:
   datasource:
     druid:
 #    type: com.alibaba.druid.pool.DruidDataSource
-      url: jdbc:mysql://rm-2zedas6617761k730o.mysql.rds.aliyuncs.com:3306/db_learn?useUnicode=true&characterEncoding=UTF-8&connectTimeout=60000&socketTimeout=60000&autoReconnect=true&autoReconnectForPools=true&failOverReadOnly=false
-      username: hpp_rw
-      password: kllERop026$uie7#ac
+      url: jdbc:mysql://localhost:3306/db_learn?useUnicode=true&characterEncoding=UTF-8&connectTimeout=60000&socketTimeout=60000&autoReconnect=true&autoReconnectForPools=true&failOverReadOnly=false
+      username: root
+      password:
       continueOnError: true
       driverClassName: com.mysql.jdbc.Driver
       initial-size: 5

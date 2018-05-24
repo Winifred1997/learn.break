@@ -59,7 +59,12 @@ public enum ErrorCode {
     /**
      * 营业状态修改错误提示
      **/
-    CAN_NOT_UPDATE_BUSINESS_STATUS(12011, "你无法修改营业状态，请联系货小蜜微信：huoquan2016");
+    CAN_NOT_UPDATE_BUSINESS_STATUS(12011, "你无法修改营业状态，请联系货小蜜微信：huoquan2016"),
+
+    /**
+     * 自定义
+     */
+    ARTICLE_NOT_HAVE_TYPE(13001, "请补全个人信息，才能发表文章");
 
     ErrorCode(Integer code, String message) {
         this.code = code;

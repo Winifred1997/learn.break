@@ -7,4 +7,7 @@ public class RedisKey {
 	/** 签到分数 */
 	public final static String INTEGRAL = SERVER + "1";
 
+	/** 点赞数 */
+	public final static String LIKE = SERVER + "2";
+
 }
