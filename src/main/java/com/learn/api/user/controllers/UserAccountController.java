@@ -4,6 +4,7 @@ package com.learn.api.user.controllers;
 import com.learn.api.common.ErrorCode;
 import com.learn.api.common.RestResult;
 import com.learn.api.common.RestResultGenerator;
+import com.learn.api.common.Utils.Utils;
 import com.learn.api.user.entities.UserAccount;
 import com.learn.api.user.entities.UserInfo;
 import com.learn.api.user.services.UserAccountService;
@@ -11,6 +12,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -90,6 +92,9 @@ public class UserAccountController {
         if (null == userAccount) {
             return RestResultGenerator.genErrorResult(ErrorCode.PARAMETER_ERROR);
         } else {
+            //将传入不为null的字段，copy到要存储的对象中
+            BeanUtils.copyProperties(account, userAccount,
+                    Utils.getNullPropertyNames(account));
             userAccount = userAccountService.save(account);
         }
         return RestResultGenerator.genSuccessResult(userAccount);
