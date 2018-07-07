@@ -93,8 +93,8 @@ public class UserAccountController {
             return RestResultGenerator.genErrorResult(ErrorCode.PARAMETER_ERROR);
         } else {
             //将传入不为null的字段，copy到要存储的对象中
-            BeanUtils.copyProperties(account, userAccount,
-                    Utils.getNullPropertyNames(account));
+            BeanUtils.copyProperties(userAccount, account,
+                    Utils.getNullPropertyNames(userAccount));
             userAccount = userAccountService.save(account);
         }
         return RestResultGenerator.genSuccessResult(userAccount);
