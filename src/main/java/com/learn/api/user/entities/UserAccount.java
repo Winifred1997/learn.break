@@ -36,7 +36,7 @@ public class UserAccount implements Serializable {
     private String nickName;
 
     @ApiModelProperty("头像")
-    @Column(columnDefinition = "varchar(16) COMMENT '头像'")
+    @Column(columnDefinition = "varchar(128) COMMENT '头像'")
     private String icon;
 
     @ApiModelProperty("权限")
