@@ -80,15 +80,15 @@ public class ArticleContentServiceImpl implements ArticleContentService {
             if (sample.getId() != null) {
                 predicates.add(cb.equal(root.<Long>get("id"), sample.getId()));
             }
-            if (sample.getTeacherAccountId()!= null) {
-                predicates.add(cb.equal(root.<Long>get("teacherAccountId"), sample.getTeacherAccountId()));
+            if (sample.getUserId()!= null) {
+                predicates.add(cb.equal(root.<Long>get("userId"), sample.getUserId()));
             }
             if (sample.getType()!= null) {
                 predicates.add(cb.equal(root.<Long>get("type"), sample.getType()));
             }
             List<Predicate> p = new ArrayList<>();
-            if (StringUtils.hasLength(sample.getTeacherName())) {
-                p.add(cb.like(root.get("teacherName"), Utils.getLikePattern(sample.getTeacherName())));
+            if (StringUtils.hasLength(sample.getUserName())) {
+                p.add(cb.like(root.get("userName"), Utils.getLikePattern(sample.getUserName())));
             }
             if (StringUtils.hasLength(sample.getTitle())) {
                 p.add(cb.like(root.get("title"), Utils.getLikePattern(sample.getTitle())));

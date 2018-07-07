@@ -27,13 +27,17 @@ public class UserAccount implements Serializable {
     @Column(columnDefinition = "varchar(16) COMMENT '账号'")
     private String userName;
 
+    @ApiModelProperty("密码")
+    @Column(columnDefinition = "varchar(16) COMMENT '密码'")
+    private String password;
+
     @ApiModelProperty("昵称")
     @Column(columnDefinition = "varchar(16) COMMENT '昵称'")
     private String nickName;
 
-    @ApiModelProperty("密码")
-    @Column(columnDefinition = "varchar(16) COMMENT '密码'")
-    private String password;
+    @ApiModelProperty("头像")
+    @Column(columnDefinition = "varchar(16) COMMENT '头像'")
+    private String icon;
 
     @ApiModelProperty("权限")
     @Column(columnDefinition = "int(1) COMMENT '权限'")
@@ -55,6 +59,11 @@ public class UserAccount implements Serializable {
     @Column(columnDefinition = "datetime COMMENT '更新时间'")
     private Date updateTime;
 
+    public static UserAccount getUserAccount(UserAccount userAccount){
+        userAccount.setPassword(null);
+        return userAccount;
+    }
+
     public Long getId() {
         return id;
     }
@@ -71,6 +80,14 @@ public class UserAccount implements Serializable {
         this.userName = userName;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getNickName() {
         return nickName;
     }
@@ -79,12 +96,12 @@ public class UserAccount implements Serializable {
         this.nickName = nickName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getIcon() {
+        return icon;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
     public Integer getRole() {
@@ -118,5 +135,4 @@ public class UserAccount implements Serializable {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
-
 }

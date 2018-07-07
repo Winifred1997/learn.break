@@ -30,7 +30,9 @@ public class UserAccountController {
         if (null == userName) {
             return RestResultGenerator.genErrorResult(ErrorCode.PARAMETER_ERROR);
         }
-        return RestResultGenerator.genSuccessResult(userAccountService.findByUserName(userName));
+        UserAccount userAccount = userAccountService.findByUserName(userName);
+        //返回数据前，把密码数据删除
+        return RestResultGenerator.genSuccessResult(UserAccount.getUserAccount(null == userAccount ? new UserAccount() : userAccount));
     }
 
     @ApiOperation(value = "注册账号（前台）")
@@ -73,6 +75,22 @@ public class UserAccountController {
         UserAccount userAccount = userAccountService.findByUserName(account.getUserName());
         if (null == userAccount || !account.getPassword().equals(userAccount.getPassword())) {
             return RestResultGenerator.genErrorResult(ErrorCode.USER_IS_NOT);
+        }
+        return RestResultGenerator.genSuccessResult(userAccount);
+    }
+
+    @ApiOperation(value = "修改账号")
+    @PostMapping("/update")
+    public RestResult<UserAccount> update(@RequestBody UserAccount account) {
+        if (null == account.getId()) {
+            return RestResultGenerator.genErrorResult(ErrorCode.PARAMETER_ERROR);
+        }
+        //验证账号是否存在
+        UserAccount userAccount = userAccountService.findById(account.getId());
+        if (null == userAccount) {
+            return RestResultGenerator.genErrorResult(ErrorCode.PARAMETER_ERROR);
+        } else {
+            userAccount = userAccountService.save(account);
         }
         return RestResultGenerator.genSuccessResult(userAccount);
     }

@@ -25,11 +25,11 @@ public class ArticleContent implements Serializable {
 
     @ApiModelProperty("作者accountId")
     @Column(columnDefinition = "bigint(20) COMMENT '作者accountId'")
-    private Long teacherAccountId;
+    private Long userId;
 
     @ApiModelProperty("作者名称")
     @Transient
-    private String teacherName;
+    private String userName;
 
     @ApiModelProperty("文章标题")
     @Column(columnDefinition = "varchar(256) COMMENT '文章标题'")
@@ -79,20 +79,20 @@ public class ArticleContent implements Serializable {
         this.id = id;
     }
 
-    public Long getTeacherAccountId() {
-        return teacherAccountId;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setTeacherAccountId(Long teacherAccountId) {
-        this.teacherAccountId = teacherAccountId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-    public String getTeacherName() {
-        return teacherName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setTeacherName(String teacherName) {
-        this.teacherName = teacherName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getTitle() {

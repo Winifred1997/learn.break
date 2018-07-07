@@ -42,7 +42,7 @@ public class ArticleController {
     ArticleReadLogService articleReadLogService;
 
     @Autowired
-    UserAccountService teacherAccountService;
+    UserAccountService userAccountService;
 
     @Autowired
     ArticleBusinessService articleBusinessService;
@@ -51,11 +51,11 @@ public class ArticleController {
     @PostMapping("/findBySamples")
     public RestResult<List<ArticleContent>> findByType(@RequestBody ArticleContent articleContent) {
         List<ArticleContent> articleContents = articleContentService.findBySamples(articleContent);
-        List<UserAccount> userAccounts = teacherAccountService.findAll();
+        List<UserAccount> userAccounts = userAccountService.findAll();
         HashMap<Long, String> collect = userAccounts.stream().collect(HashMap::new, (map, teacher) -> map.put(teacher.getId(), teacher.getNickName()), HashMap::putAll);
         if (null != articleContents && 0 < articleContents.size()) {
             for (ArticleContent content : articleContents) {
-                content.setTeacherName(collect.get(content.getTeacherAccountId()));
+                content.setUserName(collect.get(content.getUserId()));
             }
         }
         return RestResultGenerator.genSuccessResult(articleContents);
@@ -115,9 +115,9 @@ public class ArticleController {
             return RestResultGenerator.genErrorResult(ErrorCode.SERVER_ERROR_COMM);
         }
         ArticleContent content = articleContentService.findById(id);
-        UserAccount userAccount = teacherAccountService.findById(content.getTeacherAccountId());
+        UserAccount userAccount = userAccountService.findById(content.getUserId());
         if (null != userAccount && null != content) {
-            content.setTeacherName(userAccount.getNickName());
+            content.setUserName(userAccount.getNickName());
         }
         return RestResultGenerator.genSuccessResult(content);
     }
