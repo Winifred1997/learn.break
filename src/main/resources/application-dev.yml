@@ -10,20 +10,12 @@ spring:
     database: mysql
     show-sql: true
   datasource:
-    druid:
-#    type: com.alibaba.druid.pool.DruidDataSource
-      url: jdbc:mysql://localhost:3306/db_learn?useUnicode=true&characterEncoding=UTF-8&connectTimeout=60000&socketTimeout=60000&autoReconnect=true&autoReconnectForPools=true&failOverReadOnly=false
-      username: root
-      password:
-      continueOnError: true
-      driverClassName: com.mysql.jdbc.Driver
-      initial-size: 5
-      max-active: 10
-      max-idle: 5
-      min-idle: 2
-      sqlScriptEncoding: utf-8
-      test-on-borrow: true
-      validation-query: select 1
+    url: jdbc:mysql://localhost:3306/db_learn?useUnicode=true&characterEncoding=UTF-8&connectTimeout=60000&socketTimeout=60000&autoReconnect=true&autoReconnectForPools=true&failOverReadOnly=false
+    username: root
+    password:
+    continueOnError: true
+    driverClassName: com.mysql.jdbc.Driver
+    sqlScriptEncoding: utf-8
   redis:
     host: 101.201.155.140
     password: 123456
