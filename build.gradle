@@ -1,6 +1,5 @@
 group 'learn'
 version '1.0-SNAPSHOT'
-archivesBaseName="learn.break"
 
 buildscript {
     ext {
