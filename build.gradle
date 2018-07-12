@@ -1,5 +1,6 @@
 group 'learn'
 version '1.0-SNAPSHOT'
+archivesBaseName="learn.break"
 
 buildscript {
     ext {
@@ -16,7 +17,7 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'war'
+apply plugin: 'jar'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
