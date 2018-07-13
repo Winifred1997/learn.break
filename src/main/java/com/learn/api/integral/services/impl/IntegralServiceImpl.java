@@ -29,7 +29,7 @@ public class IntegralServiceImpl implements IntegralService {
     @Override
     public Integral addIntegral(Long accountId, Integer type) {
         //查询之前分值
-        Long integral = redisService.findIntegral(accountId);
+        Long integral = redisService.getIntegralNumber(accountId);
         //加上新分值
         long value = IntegralType.getMessageType(type).getValue();
         Long nowIntegral = redisService.addIntegral(accountId, integral + value);

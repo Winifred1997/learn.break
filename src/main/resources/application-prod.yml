@@ -10,23 +10,15 @@ spring:
     database: mysql
     show-sql: true
   datasource:
-    druid:
-    type: com.alibaba.druid.pool.DruidDataSource
-      url: jdbc:mysql://localhost:3306/db_learn?useUnicode=true&characterEncoding=UTF-8&connectTimeout=60000&socketTimeout=60000&autoReconnect=true&autoReconnectForPools=true&failOverReadOnly=false
-      username: root
-      password:
-      continueOnError: true
-      driverClassName: com.mysql.jdbc.Driver
-      initial-size: 5
-      max-active: 10
-      max-idle: 5
-      min-idle: 2
-      sqlScriptEncoding: utf-8
-      test-on-borrow: true
-      validation-query: select 1
+    url: jdbc:mysql://www.5iwyx.xyz:3306/db_learn?useUnicode=true&characterEncoding=UTF-8&connectTimeout=60000&socketTimeout=60000&autoReconnect=true&autoReconnectForPools=true&failOverReadOnly=false
+    username: root
+    password:
+    continueOnError: true
+    driverClassName: com.mysql.jdbc.Driver
+    sqlScriptEncoding: utf-8
   redis:
-    host: 101.201.155.140
-    password: 123456
+    host: www.5iwyx.xyz
+    password:
     port: 6379
     pool:
       max-active: 8
@@ -59,3 +51,11 @@ logging:
     com.hqq.api: DEBUG
     org.elasticsearch: INFO
     org.springframework.web.socket: DEBUG
+
+login:
+  hqq:
+    appid: 12345
+    sortkey: 66666
+    callback: "/learn"
+    basicAuthName: basicis5i
+    basicAuthPass: lEUGd4LtF

@@ -1,13 +1,8 @@
 package com.learn.api.redis.services;
 
-public interface RedisService {
+import com.learn.api.redis.RedisBaseCache;
 
-	/**
-	 * 查询签到分值
-	 * @param accountId
-	 * @return
-	 */
-	Long findIntegral(Long accountId);
+public abstract class RedisService extends RedisBaseCache {
 
 	/**
 	 * 增加签到积分
@@ -15,7 +10,14 @@ public interface RedisService {
 	 * @param integral
 	 * @return
 	 */
-    Long addIntegral(Long accountId, Long integral);
+	public abstract Long addIntegral(Long accountId, Long integral);
+
+	/**
+	 * 查询签到分值
+	 * @param accountId
+	 * @return
+	 */
+	public abstract Long getIntegralNumber(Long accountId);
 
 	/**
 	 * 浏览文章
@@ -23,14 +25,14 @@ public interface RedisService {
 	 * @param articleId
 	 * @return
 	 */
-	Long lookArticle(Long userId, Long articleId);
+	public abstract Long lookArticle(Long userId, Long articleId);
 
 	/**
 	 * 查询文章浏览数
 	 * @param articleId
 	 * @return
 	 */
-	Long getLookNumber(Long articleId);
+	public abstract Long getLookNumber(Long articleId);
 
 	/**
 	 * 对文章点赞
@@ -38,14 +40,14 @@ public interface RedisService {
 	 * @param articleId
 	 * @return
 	 */
-	Long likeArticle(Long userId, Long articleId);
+	public abstract Long likeArticle(Long userId, Long articleId);
 
 	/**
 	 * 查询文章点赞数
 	 * @param articleId
 	 * @return
 	 */
-	Long getLikeNumber(Long articleId);
+	public abstract Long getLikeNumber(Long articleId);
 
 	/**
 	 * 评论文章
@@ -53,12 +55,12 @@ public interface RedisService {
 	 * @param articleId
 	 * @return
 	 */
-	Long commentArticle(Long userId, Long articleId);
+	public abstract Long commentArticle(Long userId, Long articleId);
 
 	/**
 	 * 查询文章评论数
 	 * @param articleId
 	 * @return
 	 */
-	Long getCommentNumber(Long articleId);
+	public abstract Long getCommentNumber(Long articleId);
 }

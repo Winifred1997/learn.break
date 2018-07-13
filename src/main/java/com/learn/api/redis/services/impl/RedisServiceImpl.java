@@ -1,51 +1,58 @@
 package com.learn.api.redis.services.impl;
 
-//import com.learn.api.redis.RedisBaseCache;
 import com.learn.api.redis.RedisKey;
 import com.learn.api.redis.services.RedisService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RedisServiceImpl implements RedisService {
-
-    @Override
-    public Long findIntegral(Long accountId) {
-//        return this.zscoreToString(RedisKey.INTEGRAL, accountId.toString()).longValue();
-        return 0L;
-    }
+public class RedisServiceImpl extends RedisService {
 
     @Override
     public Long addIntegral(Long accountId, Long integral) {
-        return 0L;
+        Double integralNumber = this.zincrbyToString(RedisKey.INTEGRAL, accountId.toString(), integral.doubleValue());
+        return null == integralNumber ? 0 : integralNumber.longValue();
+    }
+
+    @Override
+    public Long getIntegralNumber(Long accountId) {
+        Double integralNumber = this.zscoreToString(RedisKey.INTEGRAL, accountId.toString());
+        return null == integralNumber ? 0 : integralNumber.longValue();
     }
 
     @Override
     public Long lookArticle(Long userId, Long articleId) {
-        return 0L;
+        Double lookNumber = this.zscoreToString(RedisKey.LOOK, articleId.toString());
+        return null == lookNumber ? 0 : lookNumber.longValue();
     }
 
     @Override
     public Long getLookNumber(Long articleId) {
-        return 0L;
+        Double lookNumber = this.zscoreToString(RedisKey.INTEGRAL, articleId.toString());
+        return null == lookNumber ? 0 : lookNumber.longValue();
     }
 
     @Override
     public Long likeArticle(Long userId, Long articleId) {
-        return 0L;
+        Double articleNumber = this.zscoreToString(RedisKey.LIKE, articleId.toString());
+        return null == articleNumber ? 0 : articleNumber.longValue();
     }
 
     @Override
     public Long getLikeNumber(Long articleId) {
-        return 0L;
+        Double likeNumber = this.zscoreToString(RedisKey.LIKE, articleId.toString());
+        return null == likeNumber ? 0 : likeNumber.longValue();
     }
 
     @Override
     public Long commentArticle(Long userId, Long articleId) {
-        return 0L;
+        Double commentNumber = this.zscoreToString(RedisKey.COMMENT, articleId.toString());
+        return null == commentNumber ? 0 : commentNumber.longValue();
     }
 
     @Override
     public Long getCommentNumber(Long articleId) {
-        return 0L;
+        Double commentNumber = this.zscoreToString(RedisKey.COMMENT, articleId.toString());
+        return null == commentNumber ? 0 : commentNumber.longValue();
     }
+
 }

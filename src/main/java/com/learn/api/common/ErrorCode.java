@@ -3,7 +3,7 @@ package com.learn.api.common;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
- * Created by kevinzou on 19/06/2017. ErrorCode,按照数据段来定义
+ * Created by wjl on 19/06/2017. ErrorCode,按照数据段来定义
  */
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum ErrorCode {

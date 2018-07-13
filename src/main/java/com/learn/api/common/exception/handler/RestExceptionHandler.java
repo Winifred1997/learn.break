@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by kevinzou on 19/06/2017. RestExceptionHandler
+ * Created by wjl on 19/06/2017. RestExceptionHandler
  */
 @ControllerAdvice(annotations = {RestController.class, Controller.class})
 public class RestExceptionHandler {

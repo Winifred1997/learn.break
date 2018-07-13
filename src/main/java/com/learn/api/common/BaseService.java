@@ -7,7 +7,7 @@ import org.springframework.data.domain.Sort;
 import java.util.List;
 
 /**
- * Created by kevinzou on 17/06/2017.
+ * Created by wjl on 17/06/2017.
  * IBaseService
  */
 public interface BaseService<T> {

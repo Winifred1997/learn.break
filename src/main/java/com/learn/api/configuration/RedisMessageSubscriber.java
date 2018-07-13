@@ -6,8 +6,9 @@ import org.springframework.data.redis.connection.Message;
 import org.springframework.data.redis.connection.MessageListener;
 
 /**
- * Created by kevinzou on 16/11/2017.
+ * Created by wjl on 16/11/2017.
  * RedisMessageSubscriber
+ * 监听redis 的 key 触发事件
  */
 public class RedisMessageSubscriber implements MessageListener {
 

@@ -27,7 +27,7 @@ public class Swagger2Config {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().version("1.0").title("学习网 API").description("学习网")
-            .termsOfServiceUrl("http://www.learn.com/")
-            .contact("wjl @货圈全").build();
+            .termsOfServiceUrl("http://www.learn.com/the url is not create")
+            .contact("wjl @个人学习网").build();
     }
 }

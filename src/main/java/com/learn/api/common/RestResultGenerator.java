@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Created by kevinzou on 19/06/2017. RestResultGenerator
+ * Created by wjl on 19/06/2017. RestResultGenerator
  */
 public class RestResultGenerator {
 
