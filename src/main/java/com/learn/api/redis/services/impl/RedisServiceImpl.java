@@ -15,8 +15,9 @@ public class RedisServiceImpl extends RedisService {
 
     @Override
     public Long getIntegralNumber(Long accountId) {
-        Double integralNumber = this.zscoreToString(RedisKey.INTEGRAL, accountId.toString());
-        return null == integralNumber ? 0 : integralNumber.longValue();
+//        Double integralNumber = this.zscoreToString(RedisKey.INTEGRAL, accountId.toString());
+//        return null == integralNumber ? 0 : integralNumber.longValue();
+        return 0L;
     }
 
     @Override
@@ -27,8 +28,9 @@ public class RedisServiceImpl extends RedisService {
 
     @Override
     public Long getLookNumber(Long articleId) {
-        Double lookNumber = this.zscoreToString(RedisKey.INTEGRAL, articleId.toString());
-        return null == lookNumber ? 0 : lookNumber.longValue();
+//        Double lookNumber = this.zscoreToString(RedisKey.INTEGRAL, articleId.toString());
+//        return null == lookNumber ? 0 : lookNumber.longValue();
+        return 0L;
     }
 
     @Override
@@ -39,8 +41,9 @@ public class RedisServiceImpl extends RedisService {
 
     @Override
     public Long getLikeNumber(Long articleId) {
-        Double likeNumber = this.zscoreToString(RedisKey.LIKE, articleId.toString());
-        return null == likeNumber ? 0 : likeNumber.longValue();
+//        Double likeNumber = this.zscoreToString(RedisKey.LIKE, articleId.toString());
+//        return null == likeNumber ? 0 : likeNumber.longValue();
+        return 0L;
     }
 
     @Override
