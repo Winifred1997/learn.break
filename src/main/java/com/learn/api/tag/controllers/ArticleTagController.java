@@ -24,7 +24,7 @@ public class ArticleTagController {
     ArticleTagService articleTagService;
 
     @ApiOperation(value = "查询所有标签")
-    @PostMapping("/findAll")
+    @GetMapping("/findAll")
     public RestResult<List<ArticleTag>> findAll() {
         return RestResultGenerator.genSuccessResult(articleTagService.findAll());
     }
