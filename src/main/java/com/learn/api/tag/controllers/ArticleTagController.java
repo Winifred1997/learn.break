@@ -15,7 +15,7 @@ import java.util.List;
 
 @Api("文章内容API")
 @RestController
-@RequestMapping("/article")
+@RequestMapping("/articleTag")
 public class ArticleTagController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ArticleTagController.class);
