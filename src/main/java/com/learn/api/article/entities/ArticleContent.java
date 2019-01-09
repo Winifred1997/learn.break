@@ -47,6 +47,10 @@ public class ArticleContent implements Serializable {
     @Column(columnDefinition = "int(4) COMMENT '文章类型，0：语文；1：数学；2：英语；3：物理；4：化学；5、生物；6、政治；7、地理。'")
     private Integer type;
 
+    @ApiModelProperty("文章标签，可设置一个或多个")
+    @Column(columnDefinition = "varchar(16) COMMENT '文章标签，可设置一个或多个'")
+    private String tag;
+
     @ApiModelProperty("创建时间")
     @CreationTimestamp
     @DateTimeFormat(pattern = Constants.DATE_TIME_FORMAT)
@@ -125,6 +129,14 @@ public class ArticleContent implements Serializable {
 
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
     public Date getCreateTime() {

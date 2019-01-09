@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api("文章内容API")
+@Api("文章标签API")
 @RestController
 @RequestMapping("/articleTag")
 public class ArticleTagController {
