@@ -4,11 +4,10 @@ public interface ArticleBusinessService{
 
     /**
      * 浏览文章
-     * @param userId
      * @param articleId
      * @return
      */
-    Long lookArticle(Long userId, Long articleId);
+    Long lookArticle(Long articleId);
 
     /**
      * 查看文章浏览数量

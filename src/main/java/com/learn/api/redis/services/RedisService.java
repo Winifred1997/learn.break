@@ -21,11 +21,10 @@ public abstract class RedisService extends RedisBaseCache {
 
 	/**
 	 * 浏览文章
-	 * @param userId
 	 * @param articleId
 	 * @return
 	 */
-	public abstract Long lookArticle(Long userId, Long articleId);
+	public abstract Long lookArticle(Long articleId);
 
 	/**
 	 * 查询文章浏览数

@@ -27,9 +27,8 @@ public class ArticleBusinessController {
 
     @ApiOperation(value = "浏览文章")
     @GetMapping("/lookArticle")
-    public RestResult<Long> lookArticle(@RequestParam("userId") Long userId,
-                                        @RequestParam("articleId") Long articleId) {
-        return RestResultGenerator.genSuccessResult(articleBusinessService.lookArticle(userId, articleId));
+    public RestResult<Long> lookArticle(@RequestParam("articleId") Long articleId) {
+        return RestResultGenerator.genSuccessResult(articleBusinessService.lookArticle(articleId));
     }
 
     @ApiOperation(value = "点赞文章")

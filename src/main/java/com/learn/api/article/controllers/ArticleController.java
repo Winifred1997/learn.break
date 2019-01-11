@@ -119,6 +119,8 @@ public class ArticleController {
         if (null != userAccount && null != content) {
             content.setUserName(userAccount.getNickName());
         }
+        //累计浏览次数
+        articleBusinessService.lookArticle(id);
         return RestResultGenerator.genSuccessResult(content);
     }
 
