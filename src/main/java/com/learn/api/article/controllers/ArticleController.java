@@ -23,6 +23,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
+import redis.clients.jedis.Jedis;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -80,6 +81,17 @@ public class ArticleController {
             }
         }
         return RestResultGenerator.genSuccessResult(articleContents);
+    }
+
+    @ApiOperation(value = "测试")
+    @PostMapping("/test")
+    public RestResult<String> test() {
+        Jedis jedis = new Jedis("101.200.46.131");
+        if (jedis != null) {
+            System.out.println("connect to redis server sucessfully");
+        }
+        jedis.set("name", "aaabbbccc");
+        return RestResultGenerator.genSuccessResult(jedis.get("name"));
     }
 
     @ApiOperation(value = "保存文章")
