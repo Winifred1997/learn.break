@@ -114,7 +114,7 @@ public class RedisBaseCache {
         try {
             return redisTemplate.opsForZSet().incrementScore(key, member, increment);
         } catch (Exception e) {
-            LOGGER.debug("Key zincrbyToString Exception key: {}", key);
+            LOGGER.debug("Key zincrbyToString Exception key: {}, member: {}, increment: {}", key, member, increment, e);
         }
         return 0D;
     }
@@ -131,7 +131,7 @@ public class RedisBaseCache {
         try {
             return redisTemplate.opsForZSet().incrementScore(key, member, increment);
         } catch (Exception e) {
-            LOGGER.debug("Key zincrbyToObject Exception key: {}", key);
+            LOGGER.debug("Key zincrbyToObject Exception key: {}, member: {}, increment: {}", key, member, increment, e);
         }
         return 0D;
     }
@@ -147,7 +147,7 @@ public class RedisBaseCache {
         try {
             return redisTemplate.opsForZSet().score(key, member);
         } catch (Exception e) {
-            LOGGER.debug("Key zscoreToString Exception key: {}", key);
+            LOGGER.debug("Key zscoreToString Exception key: {}, member: {}", key, member, e);
         }
         return 0D;
     }
@@ -163,7 +163,7 @@ public class RedisBaseCache {
         try {
             return redisTemplate.opsForZSet().score(key, member);
         } catch (Exception e) {
-            LOGGER.debug("Key zscoreToObject Exception key: {}", key);
+            LOGGER.debug("Key zscoreToObject Exception key: {}, member: {}", key, member, e);
         }
         return 0D;
     }
