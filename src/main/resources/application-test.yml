@@ -56,6 +56,6 @@ logging:
     org.gjt.mm.mysql: WARN
     io.swagger: ERROR
     springfox.documentation: ERROR
-    com.hqq.api: DEBUG
+    com.learn.api: DEBUG
     org.elasticsearch: INFO
     org.springframework.web.socket: DEBUG
