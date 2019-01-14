@@ -27,7 +27,7 @@ public class RedisServiceImpl extends RedisService {
 
     @Override
     public Long getLookNumber(Long articleId) {
-        Double lookNumber = this.zscoreToString(RedisKey.INTEGRAL, articleId.toString());
+        Double lookNumber = this.zscoreToString(RedisKey.LOOK, articleId.toString());
         return null == lookNumber ? 0 : lookNumber.longValue();
     }
 

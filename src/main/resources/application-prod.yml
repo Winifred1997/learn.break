@@ -17,7 +17,7 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
     sqlScriptEncoding: utf-8
   redis:
-    host: localhost
+    host: 101.200.46.131
     password:
     port: 6379
     pool:
