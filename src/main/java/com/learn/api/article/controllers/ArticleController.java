@@ -133,6 +133,10 @@ public class ArticleController {
         }
         //累计浏览次数
         articleBusinessService.lookArticle(id);
+        //组装返回的浏览数、点赞数、评论数
+        content.setLookNumber(articleBusinessService.getLookNumber(content.getId()));
+        content.setLikeNumber(articleBusinessService.getLikeNumber(content.getId()));
+        content.setCommentNumber(articleBusinessService.getCommentNumber(content.getId()));
         return RestResultGenerator.genSuccessResult(content);
     }
 

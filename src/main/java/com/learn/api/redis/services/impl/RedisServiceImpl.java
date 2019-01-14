@@ -32,7 +32,7 @@ public class RedisServiceImpl extends RedisService {
     }
 
     @Override
-    public Long likeArticle(Long userId, Long articleId) {
+    public Long likeArticle(Long articleId) {
         Double articleNumber = this.zincrbyToString(RedisKey.LIKE, articleId.toString(), (double) 1);
         return null == articleNumber ? 0 : articleNumber.longValue();
     }

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Api("文章内容API")
 @RestController
-@RequestMapping("/article")
+@RequestMapping("/articleBusiness")
 public class ArticleBusinessController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ArticleBusinessController.class);
@@ -25,21 +25,20 @@ public class ArticleBusinessController {
     @Autowired
     UserAccountService userAccountService;
 
-    @ApiOperation(value = "浏览文章")
-    @GetMapping("/lookArticle")
-    public RestResult<Long> lookArticle(@RequestParam("articleId") Long articleId) {
-        return RestResultGenerator.genSuccessResult(articleBusinessService.lookArticle(articleId));
-    }
+//    @ApiOperation(value = "浏览文章")
+//    @GetMapping("/lookArticle")
+//    public RestResult<Long> lookArticle(@RequestParam("articleId") Long articleId) {
+//        return RestResultGenerator.genSuccessResult(articleBusinessService.lookArticle(articleId));
+//    }
 
     @ApiOperation(value = "点赞文章")
     @GetMapping("/likeArticle")
-    public RestResult<Long> likeArticle(@RequestParam("userId") Long userId,
-                                        @RequestParam("articleId") Long articleId) {
-        //校验是否有这个用户
-        if (null == userId || null == userAccountService.findById(userId)) {
-            return RestResultGenerator.genErrorResult(ErrorCode.USER_IS_NOT);
-        }
-        return RestResultGenerator.genSuccessResult(articleBusinessService.likeArticle(userId, articleId));
+    public RestResult<Long> likeArticle(@RequestParam("articleId") Long articleId) {
+//        //校验是否有这个用户
+//        if (null == userId || null == userAccountService.findById(userId)) {
+//            return RestResultGenerator.genErrorResult(ErrorCode.USER_IS_NOT);
+//        }
+        return RestResultGenerator.genSuccessResult(articleBusinessService.likeArticle(articleId));
     }
 
 }

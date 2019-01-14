@@ -18,11 +18,10 @@ public interface ArticleBusinessService{
 
     /**
      * 点赞文章
-     * @param userId
      * @param articleId
      * @return
      */
-    Long likeArticle(Long userId, Long articleId);
+    Long likeArticle(Long articleId);
 
     /**
      * 查看文章点赞数量

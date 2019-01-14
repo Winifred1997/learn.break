@@ -22,8 +22,8 @@ public class ArticleBusinessServiceImpl implements ArticleBusinessService {
     }
 
     @Override
-    public Long likeArticle(Long userId, Long articleId) {
-        return redisService.likeArticle(userId, articleId);
+    public Long likeArticle(Long articleId) {
+        return redisService.likeArticle(articleId);
     }
 
     @Override

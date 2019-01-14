@@ -35,11 +35,10 @@ public abstract class RedisService extends RedisBaseCache {
 
 	/**
 	 * 对文章点赞
-	 * @param userId
 	 * @param articleId
 	 * @return
 	 */
-	public abstract Long likeArticle(Long userId, Long articleId);
+	public abstract Long likeArticle(Long articleId);
 
 	/**
 	 * 查询文章点赞数
