@@ -53,9 +53,6 @@ logging:
     org.springframework.web.socket: DEBUG
 
 login:
-  hqq:
-    appid: 12345
-    sortkey: 66666
-    callback: "/learn"
+  learn:
     basicAuthName: basicis5i
     basicAuthPass: lEUGd4LtF

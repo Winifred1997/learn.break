@@ -59,3 +59,8 @@ logging:
     com.learn.api: DEBUG
     org.elasticsearch: INFO
     org.springframework.web.socket: DEBUG
+
+login:
+  learn:
+    basicAuthName: basicis5i
+    basicAuthPass: lEUGd4LtF

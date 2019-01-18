@@ -28,6 +28,9 @@ import redis.clients.jedis.Jedis;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Api("文章内容API")
 @RestController
@@ -86,6 +89,7 @@ public class ArticleController {
     @ApiOperation(value = "测试")
     @PostMapping("/test")
     public RestResult<String> test() {
+        ExecutorService es = Executors.newFixedThreadPool(5);
         Jedis jedis = new Jedis("101.200.46.131");
         if (jedis != null) {
             System.out.println("connect to redis server sucessfully");
